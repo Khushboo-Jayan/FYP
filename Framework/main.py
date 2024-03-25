@@ -20,15 +20,23 @@ def modemon():
     print("---------------------------------------------------------------------\n\n\n")
 
 
+# restart network services
+@app.command()
+def restartnetwork():
+    os.system("systemctl restart NetworkManager")
+
+
 @app.command()
 def wpa2handshake():  # pass a parameter for the function
-    print("Check if in monitor mode")
-    print("---------------------------------------------------------------------")
-    os.system("ifconfig")
-    print("---------------------------------------------------------------------")
+    modemon()
 
     global packageName
-
+    # sudo
+    # hping3 - c
+    # 15000 - d
+    # 120 - S - w
+    # 64 - p
+    # 9999 - -flood - -rand - source
     # list the networks
     os.system("airodump-ng --band abg wlan0mon")
 
@@ -55,6 +63,8 @@ def wpa2handshake():  # pass a parameter for the function
 
 @app.command()
 def vendorlookup():
+    modemon()
+
     global BSSID
     global channel
 
@@ -74,6 +84,14 @@ def vendorlookup():
     except:
         print("Mac vendor not registered")
 
+@app.command()
+def connectnetwork():
+    os.system("nmcli device wifi list")
+
+    BSSID = input("\nEnter the BSSID of any network to be connected: ")
+    password = input("Enter the password extracted using wpa2 handshake password cracking : ")
+
+    os.system("nmcli device wifi connect " + BSSID + " password " + password)
 
 # Define the callback function for listing commands
 @app.command()
