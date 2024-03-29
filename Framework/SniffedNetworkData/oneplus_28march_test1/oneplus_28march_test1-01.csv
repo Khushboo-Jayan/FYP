@@ -1,0 +1,7 @@
+
+BSSID, First time seen, Last time seen, channel, Speed, Privacy, Cipher, Authentication, Power, # beacons, # IV, LAN IP, ID-length, ESSID, Key
+A2:F5:D7:FA:C5:4F, 2024-03-28 18:24:27, 2024-03-28 18:25:58,  6, 360, WPA2, CCMP, PSK, -32,      870,     1668,   0.  0.  0.  0,   8, OnePlus , 
+
+Station MAC, First time seen, Last time seen, Power, # packets, BSSID, Probed ESSIDs
+74:A6:CD:D4:F9:0A, 2024-03-28 18:24:28, 2024-03-28 18:25:58, -22,     1868, A2:F5:D7:FA:C5:4F,
+
