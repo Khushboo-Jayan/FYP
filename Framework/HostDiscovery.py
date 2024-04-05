@@ -1,11 +1,17 @@
 import os
 import nmap
 
+def device_discovery():
+    print("----------------------------------------------------------------------------------------------------------------------\n\n")
+    print("'device_discovery' module is used detect the connected stations on the requested network ID and their mac addresses")
+    print("\n\n----------------------------------------------------------------------------------------------------------------------")
 
-def device_discovery(target):
     os.system("ip addr show")
+
+    target_ip_range = input("Enter the IP range to perform the host discovery on: ")
+
     nm = nmap.PortScanner()
-    nm.scan(hosts=target, arguments='-sn')
+    nm.scan(hosts=target_ip_range, arguments='-sn')
 
     scan_results = []
 
@@ -14,16 +20,10 @@ def device_discovery(target):
             'host': host,
             'status': nm[host].state(),
             'hostname': nm[host].hostname(),
+            'mac': ', '.join(nm[host]['vendor'].values()) if 'vendor' in nm[host] else 'Unknown',
         }
         scan_results.append(host_info)
 
-    return scan_results
-
-
-target_ip_range = input("Enter the IP range to perform the host discovery on")
-results = device_discovery(target_ip_range)
-
-
-for result in results:
-    print(f"Host: {result['host']} | Status: {result['status']} | Hostname: {result['hostname']}")
+    for result in scan_results:
+        print(f"Host: {result['host']} | Status: {result['status']} | Hostname: {result['hostname']} | MAC: {result['mac']}")
 

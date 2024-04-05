@@ -1,11 +1,14 @@
 import typer
-from vendorlookup import mac_addr_vendor_lookup
-from monitormode import switch_monitor_mode
-from restartNetwork import restart_network_services
-from wpahandshake import wpa_capture_password_cracking
-from connectCrackedNetwork import connect_to_cracked_network
-from commands import list_defined_modules
-import os
+from VendorLookup import mac_addr_vendor_lookup
+from MonitorMode import switch_monitor_mode
+from RestartNetwork import restart_network_services
+from WPA_Handshake import wpa_capture_password_cracking
+from ConnectCrackedNetwork import connect_to_cracked_network
+from CommandList import list_defined_modules
+from HostDiscovery import device_discovery
+from ARP_Spoofing import man_in_middle_attack
+from TelloContol import tello_take_control
+
 
 # create an object using typer
 app = typer.Typer()
@@ -41,6 +44,20 @@ def connectnetwork():
 def list():
     list_defined_modules()
 
+
+@app.command()
+def network_scan():
+    device_discovery()
+
+
+@app.command()
+def arp_spoofing():
+    man_in_middle_attack()
+
+
+@app.command()
+def drone_flight_control():
+    tello_take_control()
 
 # at the start of the python application we are calling the object
 def main():
