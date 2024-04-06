@@ -19,7 +19,7 @@ def wpa_capture_password_cracking():
         case 1:
             os.chdir("..")
             capture_file = input("Enter the name of the .cap capture file: ")
-            os.system(" aircrack-ng -a2 -w wordlists/rockyou.txt " + capture_file)
+            os.system("aircrack-ng -a2 -w wordlists/rockyou.txt " + capture_file)
 
         case 2:
             try:
