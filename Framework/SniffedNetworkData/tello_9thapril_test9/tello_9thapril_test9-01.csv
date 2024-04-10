@@ -1,0 +1,7 @@
+
+BSSID, First time seen, Last time seen, channel, Speed, Privacy, Cipher, Authentication, Power, # beacons, # IV, LAN IP, ID-length, ESSID, Key
+48:1C:B9:9A:C2:44, 2024-04-09 00:43:54, 2024-04-09 00:44:41,  9,  54, WPA2, CCMP, PSK, -32,      392,    20227,   0.  0.  0.  0,  12, TELLO-9AC244, 
+
+Station MAC, First time seen, Last time seen, Power, # packets, BSSID, Probed ESSIDs
+F6:33:86:AB:C8:E6, 2024-04-09 00:43:54, 2024-04-09 00:44:20, -28,    20592, 48:1C:B9:9A:C2:44,
+

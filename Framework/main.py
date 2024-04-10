@@ -7,7 +7,7 @@ from ConnectCrackedNetwork import connect_to_cracked_network
 from CommandList import list_defined_modules
 from HostDiscovery import device_discovery
 from ARP_Spoofing import man_in_middle_attack
-from TelloContol import tello_take_control
+from testCV import show_image
 
 
 # create an object using typer
@@ -56,8 +56,8 @@ def arp_spoofing():
 
 
 @app.command()
-def drone_flight_control():
-    tello_take_control()
+def print_image():
+    show_image()
 
 # at the start of the python application we are calling the object
 def main():

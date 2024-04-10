@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE detection-run SYSTEM "http://kismetwireless.net/kismet-3.1.0.dtd">
+
+<detection-run kismet-version="airodump-ng-1.0" start-time="Tue Apr  9 01:19:13 2024">
+
+	<wireless-network number="1" type="infrastructure" first-time="Tue Apr  9 01:19:13 2024" last-time="Tue Apr  9 01:20:58 2024">
+		<SSID first-time="Tue Apr  9 01:19:13 2024" last-time="Tue Apr  9 01:20:58 2024">
+			<type>Beacon</type>
+			<max-rate>54.000000</max-rate>
+			<packets>963</packets>
+			<beaconrate>10</beaconrate>
+			<encryption>WPA+PSK</encryption>
+			<encryption>WPA+AES-CCM</encryption>
+			<essid cloaked="false">TELLO-9AC244</essid>
+		</SSID>
+		<BSSID>48:1C:B9:9A:C2:44</BSSID>
+		<manuf>SZ DJI TECHNOLOGY CO.,LTD</manuf>
+		<channel>8</channel>
+		<freqmhz>2447 27572</freqmhz>
+		<maxseenrate>54000</maxseenrate>
+		<carrier>IEEE 802.11b+</carrier>
+		<encoding>CCK</encoding>
+		<packets>
+			<LLC>23388</LLC>
+			<data>23388</data>
+			<crypt>0</crypt>
+			<total>27572</total>
+			<fragments>0</fragments>
+			<retries>0</retries>
+		</packets>
+		<datasize>0</datasize>
+		<wireless-client number="1" type="established" first-time="Tue Apr  9 01:19:13 2024" last-time="Tue Apr  9 01:19:42 2024">
+			<client-mac>F6:33:86:AB:C8:E6</client-mac>
+			<client-manuf>Unknown</client-manuf>
+			<channel>8</channel>
+			<maxseenrate>54.000000</maxseenrate>
+			<carrier>IEEE 802.11b+</carrier>
+			<encoding>CCK</encoding>
+			<packets>
+				<LLC>0</LLC>
+				<data>0</data>
+				<crypt>0</crypt>
+				<total>24029</total>
+				<fragments>0</fragments>
+				<retries>0</retries>
+			</packets>
+			<snr-info>
+				<last_signal_dbm>-34</last_signal_dbm>
+				<last_noise_dbm>0</last_noise_dbm>
+				<last_signal_rssi>-34</last_signal_rssi>
+				<last_noise_rssi>0</last_noise_rssi>
+				<min_signal_dbm>-34</min_signal_dbm>
+				<min_noise_dbm>0</min_noise_dbm>
+				<min_signal_rssi>1024</min_signal_rssi>
+				<min_noise_rssi>1024</min_noise_rssi>
+				<max_signal_dbm>-34</max_signal_dbm>
+				<max_noise_dbm>0</max_noise_dbm>
+				<max_signal_rssi>-34</max_signal_rssi>
+				<max_noise_rssi>0</max_noise_rssi>
+			</snr-info>
+		</wireless-client>
+		<snr-info>
+			<last_signal_dbm>-32</last_signal_dbm>
+			<last_noise_dbm>0</last_noise_dbm>
+			<last_signal_rssi>-32</last_signal_rssi>
+			<last_noise_rssi>0</last_noise_rssi>
+			<min_signal_dbm>-32</min_signal_dbm>
+			<min_noise_dbm>0</min_noise_dbm>
+			<min_signal_rssi>1024</min_signal_rssi>
+			<min_noise_rssi>1024</min_noise_rssi>
+			<max_signal_dbm>-32</max_signal_dbm>
+			<max_noise_dbm>0</max_noise_dbm>
+			<max_signal_rssi>-32</max_signal_rssi>
+			<max_noise_rssi>0</max_noise_rssi>
+		</snr-info>
+		<bsstimestamp>159129922</bsstimestamp>
+		<cdp-device></cdp-device>
+		<cdp-portid></cdp-portid>
+	</wireless-network>
+</detection-run>

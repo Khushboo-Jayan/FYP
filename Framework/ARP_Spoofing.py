@@ -4,8 +4,8 @@ from ConnectCrackedNetwork import connect_to_cracked_network
 
 
 def man_in_middle_attack():
-    connect_to_cracked_network()
-    device_discovery()
+    # connect_to_cracked_network()
+    # device_discovery()
 
 
     subprocess.run(["sysctl", "-w", "net.ipv4.ip_forward=1"])
