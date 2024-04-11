@@ -9,7 +9,6 @@ def show_image():
     if image is not None:
         print("Image loaded successfully.")
         print("Image shape:", image.shape)
-        print("Image data:\n", image)
 
         # Create a named window and display the image
         cv2.namedWindow("Photo", cv2.WINDOW_NORMAL)  # Use cv2.WINDOW_NORMAL for resizable window
@@ -20,3 +19,6 @@ def show_image():
         cv2.destroyAllWindows()
     else:
         print("Error: Unable to load the image.")
+
+
+show_image()

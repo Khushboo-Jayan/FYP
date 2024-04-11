@@ -1,71 +1,33 @@
-#
-# Tello Python3 Control Demo 
-#
-# http://www.ryzerobotics.com/
-#
-# 1/1/2018
+import time, cv2
+from threading import Thread
+from djitellopy import Tello
 
-import threading 
-import socket
-import sys
-import time
+tello = Tello()
 
+tello.connect()
 
-host = ''
-port = 9000
-locaddr = (host,port) 
+keepRecording = True
+tello.streamon()
+frame_read = tello.get_frame_read()
 
+def videoRecorder():
+    # create a VideoWrite object, recoring to ./video.avi
+    height, width, _ = frame_read.frame.shape
+    video = cv2.VideoWriter('video.avi', cv2.VideoWriter_fourcc(*'XVID'), 30, (width, height))
 
-# Create a UDP socket
-sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    while keepRecording:
+        video.write(frame_read.frame)
+        time.sleep(1 / 30)
 
-tello_address = ('192.168.10.1', 8889)
+    video.release()
 
-sock.bind(locaddr)
+# we need to run the recorder in a seperate thread, otherwise blocking options
+#  would prevent frames from getting added to the video
+recorder = Thread(target=videoRecorder)
+recorder.start()
 
-def recv():
-    count = 0
-    while True: 
-        try:
-            data, server = sock.recvfrom(1518)
-            print(data.decode(encoding="utf-8"))
-        except Exception:
-            print ('\nExit . . .\n')
-            break
+tello.move_up(100)
+tello.rotate_counter_clockwise(360)
 
-
-print ('\r\n\r\nTello Python3 Demo.\r\n')
-
-print ('Tello: command takeoff land flip forward back left right \r\n       up down cw ccw speed speed?\r\n')
-
-print ('end -- quit demo.\r\n')
-
-
-#recvThread create
-recvThread = threading.Thread(target=recv)
-recvThread.start()
-
-while True: 
-
-    try:
-        msg = input("");
-
-        if not msg:
-            break  
-
-        if 'end' in msg:
-            print ('...')
-            sock.close()  
-            break
-
-        # Send data
-        msg = msg.encode(encoding="utf-8") 
-        sent = sock.sendto(msg, tello_address)
-    except KeyboardInterrupt:
-        print ('\n . . .\n')
-        sock.close()  
-        break
-
-
-
-
+keepRecording = False
+recorder.join()

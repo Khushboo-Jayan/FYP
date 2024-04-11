@@ -7,7 +7,8 @@ from ConnectCrackedNetwork import connect_to_cracked_network
 from CommandList import list_defined_modules
 from HostDiscovery import device_discovery
 from ARP_Spoofing import man_in_middle_attack
-from testCV import show_image
+from TelloControl import take_flight_control
+from telloCaptureImage import take_tello_image
 
 
 # create an object using typer
@@ -25,19 +26,16 @@ def modemon():
 def restartnetwork():
     restart_network_services()
 
+
 @app.command()
 def wpa2handshake():
     wpa_capture_password_cracking()
 
 
 @app.command()
-def vendorlookup():
-    mac_addr_vendor_lookup()
-
-
-@app.command()
 def connectnetwork():
     connect_to_cracked_network()
+
 
 # Define the callback function for listing commands
 @app.command()
@@ -51,13 +49,24 @@ def network_scan():
 
 
 @app.command()
+def vendorlookup():
+    mac_addr_vendor_lookup()
+
+
+@app.command()
 def arp_spoofing():
     man_in_middle_attack()
 
 
 @app.command()
-def print_image():
-    show_image()
+def drone_motion_control():
+    take_flight_control()
+
+
+@app.command()
+def capture_image():
+    take_tello_image()
+
 
 # at the start of the python application we are calling the object
 def main():

@@ -1,6 +1,5 @@
 import os
 import subprocess
-from MonitorMode import switch_monitor_mode
 
 def wpa_capture_password_cracking():
     """
