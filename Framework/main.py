@@ -8,7 +8,6 @@ from CommandList import list_defined_modules
 from HostDiscovery import device_discovery
 from ARP_Spoofing import man_in_middle_attack
 from TelloControl import take_flight_control
-from telloCaptureImage import take_tello_image
 
 
 # create an object using typer
@@ -61,11 +60,6 @@ def arp_spoofing():
 @app.command()
 def drone_motion_control():
     take_flight_control()
-
-
-@app.command()
-def capture_image():
-    take_tello_image()
 
 
 # at the start of the python application we are calling the object
