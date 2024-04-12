@@ -9,63 +9,98 @@ from HostDiscovery import device_discovery
 from ARP_Spoofing import man_in_middle_attack
 from TelloControl import take_flight_control
 
-
-# create an object using typer
+# Create a Typer object for command-line interface (CLI) application
 app = typer.Typer()
 
+# Command-line commands decorated with @typer.command()
 
-# add a decorator @typer.command() before a function declaration to designate that function as a command in CLI application.
+
+# Command to switch to monitor mode
 @app.command()
 def modemon():
+    """
+    Switch to monitor mode.
+    """
     switch_monitor_mode()
 
 
-# restart network services
+# Command to restart network services
 @app.command()
 def restartnetwork():
+    """
+    Restart network services.
+    """
     restart_network_services()
 
 
+# Command to perform WPA2 handshake password cracking
 @app.command()
 def wpa2handshake():
+    """
+    Perform WPA2 handshake password cracking.
+    """
     wpa_capture_password_cracking()
 
 
+# Command to connect to a cracked network
 @app.command()
 def connectnetwork():
+    """
+    Connect to a cracked network.
+    """
     connect_to_cracked_network()
 
 
-# Define the callback function for listing commands
+# Command to list defined modules
 @app.command()
 def list():
+    """
+    List defined modules.
+    """
     list_defined_modules()
 
 
+# Command to perform network scanning
 @app.command()
 def network_scan():
+    """
+    Perform network scanning.
+    """
     device_discovery()
 
 
+# Command to perform MAC address vendor lookup
 @app.command()
 def vendorlookup():
+    """
+    Perform MAC address vendor lookup.
+    """
     mac_addr_vendor_lookup()
 
 
+# Command to perform ARP spoofing
 @app.command()
 def arp_spoofing():
+    """
+    Perform ARP spoofing.
+    """
     man_in_middle_attack()
 
 
+# Command to control drone motion
 @app.command()
 def drone_motion_control():
+    """
+    Control drone motion.
+    """
     take_flight_control()
 
 
-# at the start of the python application we are calling the object
+# Main function to execute the Typer object
 def main():
     app()
 
 
+# Execute the main function if the script is run directly
 if __name__ == "__main__":
     main()
