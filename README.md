@@ -4,6 +4,7 @@ Extensive testing is done to verify the functionality of key functions like conn
 
 The performance of the framework is also evaluated throughout the testing process under numerous circumstances, such as varied network topologies, traffic loads, and security setups. In order to improve the framework's general robustness and dependability, this evaluation aids in locating any potential problems, bottlenecks, or vulnerabilities. ​(Hacking a Wi-Fi based  drone Rubbestad)​ 
 
+<img width="601" alt="image" src="https://github.com/Khushboo-Jayan/FYP/assets/79542266/f4df7bc4-6b80-49ab-8e8f-f0c973f3e675">
  
 Fig 5.2.1 SentinelGuard Commands  
 
