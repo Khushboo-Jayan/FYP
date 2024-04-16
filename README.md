@@ -12,16 +12,22 @@ Fig 5.2.1 SentinelGuard Commands
  
 
 MonitorMode.py: The network adapter is successfully switched to monitor mode as expected by the MonitorMode.py script. It has good security protections, sufficient error handling, and strong functionality. 
-  
+
+  <img width="543" alt="image" src="https://github.com/Khushboo-Jayan/FYP/assets/79542266/a00e2401-7c11-4c74-9063-87cc6cb8e4aa">
+
 Fig 5.2.1.1 Wi-Fi adapter switch  
  
 
 HostDiscovery.py: The device_discovery() method efficiently finds hosts within the given IP range and returns information on the hostnames, MAC addresses, and statuses of connected devices. It has precise functionality, respectable performance, and engaging user interface. Nevertheless, additional testing in various network contexts and configurations could be required to guarantee thorough coverage and dependability. 
+
+<img width="599" alt="image" src="https://github.com/Khushboo-Jayan/FYP/assets/79542266/6ab34534-3b16-480b-9c3e-67771326e160">
+
 Fig 5.2.1.2 Tello Network Scan results  
 
  
 
- 
+ <img width="103" alt="image" src="https://github.com/Khushboo-Jayan/FYP/assets/79542266/7d2a7f72-8257-4a44-9bd7-a6699a5949fe">
+
 
 Fig 5.2.1.3 Issues printing Mac address 
 
