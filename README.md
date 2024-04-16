@@ -38,9 +38,17 @@ However, further testing across diverse network configurations and environments 
 ConnectCrackedNetwork.py: WPA handshake breaking passwords can be used to connect to Wi-Fi networks with the help of the connect_to_cracked_network() function. It exhibits dependable operation, suitable error management, and adequate security precautions. The script's ability to join successfully using passwords obtained through WPA handshake cracking has been tested across a variety of Wi-Fi networks. The following has been tested on three different networks.  
  
 
+<img width="598" alt="image" src="https://github.com/Khushboo-Jayan/FYP/assets/79542266/9fc7ca70-28c0-4a39-96d2-cf2a81cb1fb6">
+
 Fig 5.2.1.4 Connection established for network 1  
 
+
+<img width="594" alt="image" src="https://github.com/Khushboo-Jayan/FYP/assets/79542266/230f89ab-db2e-483b-9394-17351045455a">
+
 Fig 5.2.1.5 Connection failed for network 2 invalid BSSID 
+
+
+<img width="590" alt="image" src="https://github.com/Khushboo-Jayan/FYP/assets/79542266/50f3eb9a-d110-419a-bd43-2fda001fb4e0">
 
 Fig 5.2.1.5 Connection established for network 3  
 
@@ -49,6 +57,9 @@ Fig 5.2.1.5 Connection established for network 3
  
 
 RestartNetwork.py: The restart_network_services() function effectively restarts network services to switch the Wi-Fi adapter mode from monitor to managed, facilitating normal network operation. It demonstrates reliable functionality, adequate error handling, and minimal system impact. 
+
+<img width="599" alt="image" src="https://github.com/Khushboo-Jayan/FYP/assets/79542266/91b368cc-7e12-4ca0-b440-9faeef5be4b8">
+
 Fig 5.2.1.6 wlan0mon switched to managed mode 
 
 5.2.2 Modules 
