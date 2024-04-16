@@ -66,10 +66,14 @@ Fig 5.2.1.6 wlan0mon switched to managed mode
  
 
 The ‘Mac Vendor Lookup’: It is an extra module in the system which helps the user identify detailed information about a device using the MAC address. The framework uses the mac-vendor-lookup python3 library which contains a copy of IEE’s OUI prefix. For instance, mac prefix C0:E4:34 belongs to AzureWave Technology Inc. cross checking with Wireshark OUI gives the same output. 
- 
+
+
+ <img width="488" alt="image" src="https://github.com/Khushboo-Jayan/FYP/assets/79542266/723f6d19-40c0-4030-98de-186397b96749">
+
 Fig 5.2.2.1. Mac Vendor Lookup module by SentinelGuard Framework 
  
 
+<img width="290" alt="image" src="https://github.com/Khushboo-Jayan/FYP/assets/79542266/c970f2ab-0705-4c6d-a05a-1d4d933e6904">
  
 Fig 5.2.2.2 Mac Vendor Lookup by OUI Wireshark Web Services  
  
