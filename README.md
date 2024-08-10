@@ -171,5 +171,9 @@ Once the connection has been established, it gets battery information, sends a s
 Then, it uses the send_rc_control method given by the Tello class to send remote control (RC) commands to control the drone's movement, including commands for landing, hovering, ascending, and forward motion. 
 Meanwhile, the script uses the os.system function to run stream video feed (ffplay udp://@:11111 &) as a backgroyund process which terminats by with the drone landing.​(8 Top Methods to Run Linux Commands in Background, no date)​ 
 To ensure that flight manoeuvres are executed correctly, the script introduces time delays throughout the flight sequence by using the time.sleep() function. 
- 
+
+
+https://github.com/user-attachments/assets/951c53f6-545d-469d-9a37-2ac69f8f2f94
+
+
 Fig 5.2.2.10. Successful motion control alongside live stream as background process 
